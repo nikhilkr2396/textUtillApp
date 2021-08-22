@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/textUtillApp/static/js/main.83ecda48.chunk.js",
+    "main.js.map": "/textUtillApp/static/js/main.83ecda48.chunk.js.map",
+    "runtime-main.js": "/textUtillApp/static/js/runtime-main.246a0deb.js",
+    "runtime-main.js.map": "/textUtillApp/static/js/runtime-main.246a0deb.js.map",
+    "static/js/2.b1299120.chunk.js": "/textUtillApp/static/js/2.b1299120.chunk.js",
+    "static/js/2.b1299120.chunk.js.map": "/textUtillApp/static/js/2.b1299120.chunk.js.map",
+    "index.html": "/textUtillApp/index.html",
+    "static/js/2.b1299120.chunk.js.LICENSE.txt": "/textUtillApp/static/js/2.b1299120.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.246a0deb.js",
+    "static/js/2.b1299120.chunk.js",
+    "static/js/main.83ecda48.chunk.js"
+  ]
+}
