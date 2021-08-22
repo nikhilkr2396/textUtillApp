@@ -3,7 +3,13 @@ import AboutApp from './Components/AboutApp';
 import Navbar from './Components/Navbar';
 import TextForm from './Components/TextForm';
 import Alert from './Components/Alert';
-
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
+  
 function App(){
     
     // State for Light and Dark mode
@@ -16,6 +22,8 @@ function App(){
             document.body.style.color = 'white';
             // for displaying alert message
             displayAlert("Dark Mode has been enabled", "success");
+            // changing title for dark mode
+            document.title = "TextUtillApp - Dark Mode";
 
         }else{
             setMode('light');
@@ -23,7 +31,8 @@ function App(){
             document.body.style.color = 'black';
             // for displaying alert message
             displayAlert("Light Mode has been enabled", "success");
-
+            // changing title for light mode
+            document.title = "TextUtillApp - Light Mode";
         }
     } 
 
@@ -45,12 +54,23 @@ function App(){
 
  return(
     <>
+    <Router>
       <Navbar title="TextUtillApp" about="About App" mode={mode} changeMode={changeMode} />
       <Alert alert={alert}/>
       <div className="container">
-          <TextForm heading="Enter you text that has to be analyzed!!" mode={mode} displayAlert = {displayAlert}/>
-          {/* <AboutApp/> */}
+      <Switch>
+          <Route exact path="/about">
+            <AboutApp/>
+          </Route>
+          <Route exact path="/textUtillApp">
+              <TextForm heading="Enter you text that has to be analyzed!!" mode={mode} displayAlert = {displayAlert}/>
+          </Route>
+          <Route exact path="/">
+              <TextForm heading="Enter you text that has to be analyzed!!" mode={mode} displayAlert = {displayAlert}/>
+          </Route>
+        </Switch>
       </div>
+    </Router>
     </>
  );
  

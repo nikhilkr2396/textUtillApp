@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 
 export default function AboutApp() {
     const [myStyle , setMyStyle] = useState({
-        color : 'black',
+        color : '#3b3b3b',
         backgroundColor : 'white',
         border : '3px solid white'
     });
@@ -13,8 +13,8 @@ export default function AboutApp() {
         if(myStyle.backgroundColor == 'white'){
             setMyStyle({
                 color : 'white',
-                backgroundColor : 'black',
-                border : '3px solid black'
+                backgroundColor : '#3b3b3b',
+                border : '3px solid #3b3b3b'
             })
             setBtnText("Enable Light Mode")
         }
@@ -29,10 +29,12 @@ export default function AboutApp() {
     }
    
     return (
-       
-        <div className="container mx-1 " style = {myStyle}>
+       <>
+       <br/>
+       <br/>
+        <div className="container mx-1 my-9" style = {myStyle}>
             <h1>About Application</h1>
-            <div className="accordion my-3 mx-1" id="accordionExample">
+            <div className="accordion my-2 mx-1" id="accordionExample">
                 <div className="accordion-item" style = {myStyle}>
                     <h2 className="accordion-header" id="headingOne">
                     <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style = {myStyle}>
@@ -75,6 +77,6 @@ export default function AboutApp() {
             </div>
             
         </div>
-      
+       </> 
     )
 }
