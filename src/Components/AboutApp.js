@@ -1,32 +1,11 @@
-import React,{useState} from 'react'
+import React from 'react'
 
-export default function AboutApp() {
-    const [myStyle , setMyStyle] = useState({
-        color : '#3b3b3b',
-        backgroundColor : 'white',
-        border : '3px solid white'
-    });
-
-    const [btnText , setBtnText] = useState("Enable Dark Mode")
-    
-    const toggleStyle=()=>{
-        if(myStyle.backgroundColor == 'white'){
-            setMyStyle({
-                color : 'white',
-                backgroundColor : '#3b3b3b',
-                border : '3px solid #3b3b3b'
-            })
-            setBtnText("Enable Light Mode")
-        }
-        else{
-            setMyStyle({
-                color : 'black',
-                backgroundColor : 'white',
-                border : '3px solid white'
-            })
-            setBtnText("Enable Dark Mode")
-        }
+export default function AboutApp(props) {
+    const myStyle  = {
+        backgroundColor:props.mode==='dark' ? '#3b3b3b' : 'white', 
+        color:props.mode==='dark' ? 'white' : 'black'
     }
+    
    
     return (
        <>
@@ -38,12 +17,12 @@ export default function AboutApp() {
                 <div className="accordion-item" style = {myStyle}>
                     <h2 className="accordion-header" id="headingOne">
                     <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style = {myStyle}>
-                        Accordion Item #1
+                        <strong>World's simplest text utilities</strong>
                     </button>
                     </h2>
                     <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div className="accordion-body">
-                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classNamees that we use to style each element. These classNamees control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    TextUtill is a collection of useful text processing utilities. All text tools are simple, free and easy to use. There are no intrusive ads, popups or other garbage. Just text utilities that work right in your browser. And all utilities work exactly the same way — load text, get result.
                     </div>
                     </div>
                 </div>
@@ -71,9 +50,6 @@ export default function AboutApp() {
                     </div>
                     </div>
                 </div>
-            </div>
-            <div className="container mx-2">
-                <button type="button" className="btn btn-dark mx-2" onClick={toggleStyle}>{btnText}</button>    
             </div>
             
         </div>
